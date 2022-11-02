@@ -16,5 +16,9 @@ namespace API.Parquedero.Context
 
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<Vehiculo> vehiculos { get; set; }
+        public DbSet<Mensualidad> mensualidades { get; set; }
+        public DbSet<Celdas> celdas { get; set; }
+        public DbSet<AccesoVehiculo> accesoVehiculos { get; set; }
+        public DbSet<Nota> notas { get; set; }
     }
 }
