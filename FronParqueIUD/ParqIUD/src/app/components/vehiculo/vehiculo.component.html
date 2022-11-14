@@ -1,0 +1,84 @@
+<h1>
+    <i class="fas fa-car"></i>Vehículo
+</h1>
+<h1>
+    <small>{{accion}} Vehículo</small> </h1>
+<hr>
+
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-outline-danger" routerLink="/vehiculos">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+
+<div class="row animated_animated animate__fadeIn animated_faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm" autocomplete="off" id="content">
+            <div class="form-group col-12" hidden="hidden">
+                <label>idVehiculo</label>
+                <input type="number" class="form-control" placeholder="id de Vehículo" name="idUsuario"[(ngModel)]="vehiculo.idVehiculo" disabled="disabled">
+                <small class="form-text text-muted">Este es un campo Autogenerado</small>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-lg-4">
+                    <label>Placa</label>
+                    <input type="text" class="form-control" placeholder="Placa Vehículo" [(ngModel)]="vehiculo.placa" name="placa" id="placa" required #placa="ngModel" [class.is-invalid]="placa.invalid && placa.touched">
+                    <small class="form-text text-danger" *ngIf="placa.invalid && placa.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Marca</label>
+                    <input type="text" class="form-control" placeholder="Marca Vehículo" [(ngModel)]="vehiculo.marca" name="marca" id="marca" required #marca="ngModel" [class.is-invalid]="marca.invalid && marca.touched">
+                    <small class="form-text text-danger" *ngIf="marca.invalid && marca.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Modelo</label>
+                    <input type="text" class="form-control" placeholder="Modelo Vehículo" [(ngModel)]="vehiculo.modelo" name="modelo" id="modelo" required #modelo="ngModel" [class.is-invalid]="modelo.invalid && modelo.touched">
+                    <small class="form-text text-danger" *ngIf="modelo.invalid && modelo.touched">Campo Obligatorio</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-4 col-lg-4 col-xl-4 col-sm-12">
+                    <label>Usuario</label>
+                    <select name="idUsuario" class="form-control" [(ngModel)]="vehiculo.idUsuario" (change)="searchUsuario($event)" #usuar="ngModel" [disabled]="Usuarios.length === 0">
+                        <option *ngFor="let usuario of Usuarios" [value]="usuario.idUsuario">
+                          <span>{{ usuario.nombre1 +' '+ usuario.apellido1 }}</span>
+                        </option>
+                      </select>
+                    <small class="form-text text-danger" *ngIf="usuar.invalid && usuar.touched">Obligatorio - Debe seleccionar un Usuario</small>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Nombre Usuario</label>
+                    <input type="text" class="form-control" placeholder="{{ usuarioName }}" disabled="disabled">
+                </div>
+
+                <div class="form-group col-lg-2">
+                    <label>Estado</label>
+                    <br>
+                    
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="tratamiento" [(ngModel)]="vehiculo.estado" name="estado">
+                        <label class="custom-control-label" for="tratamiento">
+                        <span class="badge badge-success" *ngIf="vehiculo.estado">Activo</span>
+                        <span class="badge badge-danger" *ngIf="!vehiculo.estado">Inactivo</span>
+                    </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

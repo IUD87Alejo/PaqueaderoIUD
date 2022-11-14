@@ -37,6 +37,21 @@ namespace API.Parquedero.Controllers
             //return new string[] { "value1", "value2" };
         }
 
+        // GET: api/<AccesoVehiculoController>/VistaAcceso
+        [HttpGet("VistaAcceso")]
+        public ActionResult GetVista()
+        {
+            try
+            {
+                return Ok(_context.v_Accesos.ToList());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            //return new string[] { "value1", "value2" };
+        }
+
         // GET api/<AccesoVehiculoController>/5
         [HttpGet("{id}", Name = "GetAccesoVehiculo")]
         public ActionResult GetById(int id)

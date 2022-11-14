@@ -1,0 +1,56 @@
+<h1><i class="fas fa-dungeon"></i>Listado de Accesos</h1>
+<hr>
+
+<div class="row">
+    <div class="col text-right">
+        <button routerLink="/acceso/0" class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+            Agregar
+        </button>
+    </div>
+</div>
+
+<table class="table table-hover mt-3 animate__fadeIn animate__faster mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Placa</th>
+            <th scope="col">Fecha Ingreso</th>
+            <th scope="col">Fecha Salida</th>
+            <th scope="col">Celda</th>
+            <th scope="col">Botones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reg of regs; let i = index">
+            <td>{{ reg.placa }}</td>
+            <td>{{ reg.fechaIngreso | fechaModificada }}</td>
+            <td>{{ reg.fechaSalida | fechaModificada }}</td>
+            <td>{{ reg.idCelda }}</td>
+            <td>
+                <button class="btn btn-info mr-1 mt-1" style='width:32px; height:32px' title="Editar" [routerLink]="['/acceso', reg.idAcceso]">
+                    <i class="fa fa-pen center"></i>
+                </button>
+                <!-- <button class="btn btn-danger mr-1 mt-1" style='width:32px; height:32px' title="Eliminar" (click)="deleteVehiculo(reg, i)">
+                    <i class="fa fa-trash"></i>
+                </button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!cargando && regs.length === 0" class="alert alert-warning text-center mt-3">
+    <h4 class="alert-heading">No hay resgistros</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+<div *ngIf="cargando" class="alert alert-info text-center mt-3">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+        Espere por favor
+    </p>
+</div>

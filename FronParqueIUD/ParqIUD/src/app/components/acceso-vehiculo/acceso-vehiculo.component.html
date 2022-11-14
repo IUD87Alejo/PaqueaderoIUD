@@ -1,0 +1,57 @@
+<h1>
+    <i class="fas fa-dungeon"></i>Accesos
+</h1>
+<h1>
+    <small>{{accion}} Acceso</small> </h1>
+<hr>
+
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-outline-danger" routerLink="/accesos">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+
+<div class="row animated_animated animate__fadeIn animated_faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm" autocomplete="off" id="content">
+            <div class="form-group col-12" hidden="hidden">
+                <label>idAcceso</label>
+                <input type="number" class="form-control" placeholder="id de Acceso" name="idAcceso"[(ngModel)]="acceso.idAcceso" disabled="disabled">
+                <small class="form-text text-muted">Este es un campo Autogenerado</small>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-lg-4">
+                    <label>Placa</label>
+                    <input type="text" class="form-control" placeholder="Placa Vehículo" [(ngModel)]="vehiculo.placa" (change)="searchVehiculo($event)" name="placa" id="placa" required #placa="ngModel" [class.is-invalid]="placa.invalid && placa.touched">
+                    <small class="form-text text-danger" *ngIf="placa.invalid && placa.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Marca</label>
+                    <input type="text" class="form-control" placeholder="{{ marca }}" disabled="disabled">
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Modelo</label>
+                    <input type="text" class="form-control" placeholder="{{ modelo }}" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="row">
+                
+                
+
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

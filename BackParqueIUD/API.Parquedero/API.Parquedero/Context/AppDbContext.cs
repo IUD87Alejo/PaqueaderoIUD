@@ -1,12 +1,9 @@
-﻿using API.Parquedero.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 namespace API.Parquedero.Context
 {
+    using API.Parquedero.Models;
+    using Microsoft.EntityFrameworkCore;
+
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options): base(options)
@@ -20,5 +17,6 @@ namespace API.Parquedero.Context
         public DbSet<Celdas> celdas { get; set; }
         public DbSet<AccesoVehiculo> accesoVehiculos { get; set; }
         public DbSet<Nota> notas { get; set; }
+        public DbSet<V_Accesos> v_Accesos { get; set; }
     }
 }

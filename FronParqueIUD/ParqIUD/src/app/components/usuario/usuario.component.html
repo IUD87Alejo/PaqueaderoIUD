@@ -1,0 +1,88 @@
+<h1>
+    <i class="fas fa-user-tie"></i>Usuario
+</h1>
+<h1>
+    <small>{{accion}} Usuario</small> </h1>
+<hr>
+
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-outline-danger" routerLink="/usuarios">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+
+<div class="row animated_animated animate__fadeIn animated_faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm" autocomplete="off" id="content">
+            <div class="form-group col-12" hidden="hidden">
+                <label>idUsuario</label>
+                <input type="number" class="form-control" placeholder="id de Usuario" name="idUsuario"[(ngModel)]="usuario.idUsuario" disabled="disabled">
+                <small class="form-text text-muted">Este es un campo Autogenerado</small>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-lg-3">
+                    <label>1er Nombre</label>
+                    <input type="text" class="form-control" placeholder="Primer Nombre" [(ngModel)]="usuario.nombre1" name="name1" id="name1" required #name1="ngModel" [class.is-invalid]="name1.invalid && name1.touched">
+                    <small class="form-text text-danger" *ngIf="name1.invalid && name1.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label>2do Nombre</label>
+                    <input type="text" class="form-control" placeholder="Segundo Nombre" [(ngModel)]="usuario.nombre2" name="name2" id="name2" required #name2="ngModel" [class.is-invalid]="name2.invalid && name2.touched">
+                    <small class="form-text text-danger" *ngIf="name2.invalid && name2.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label>1er Apellido</label>
+                    <input type="text" class="form-control" placeholder="Primer Apellido" [(ngModel)]="usuario.apellido1" name="apell1" id="apell1" required #apell1="ngModel" [class.is-invalid]="apell1.invalid && apell1.touched">
+                    <small class="form-text text-danger" *ngIf="apell1.invalid && apell1.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label>2do Apellido</label>
+                    <input type="text" class="form-control" placeholder="Segundo Apellido" [(ngModel)]="usuario.apellido2" name="apell2" id="apell2" required #apell2="ngModel" [class.is-invalid]="apell2.invalid && apell2.touched">
+                    <small class="form-text text-danger" *ngIf="apell2.invalid && apell2.touched">Campo Obligatorio</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-lg-3">
+                    <label>Documento</label>
+                    <input type="text" class="form-control" placeholder="# Documento" [(ngModel)]="usuario.documento" name="dcto" id="dcto" required #dcto="ngModel" [class.is-invalid]="dcto.invalid && dcto.touched">
+                    <small class="form-text text-danger" *ngIf="dcto.invalid && dcto.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label>Celular</label>
+                    <input type="text" class="form-control" placeholder="# Celular" [(ngModel)]="usuario.celular" name="cel" id="cel" required #cel="ngModel" [class.is-invalid]="cel.invalid && cel.touched">
+                    <small class="form-text text-danger" *ngIf="cel.invalid && cel.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Dirección</label>
+                    <input type="text" class="form-control" placeholder="Dirección" [(ngModel)]="usuario.direccion" name="direc" id="direc" required #direc="ngModel" [class.is-invalid]="direc.invalid && direc.touched">
+                    <small class="form-text text-danger" *ngIf="direc.invalid && direc.touched">Campo Obligatorio</small>
+                </div>
+                <div class="form-group col-lg-2">
+                    <label>Estado</label>
+                    <br>
+                    
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="tratamiento" [(ngModel)]="usuario.estado" name="estado">
+                        <label class="custom-control-label" for="tratamiento">
+                        <span class="badge badge-success" *ngIf="usuario.estado">Activo</span>
+                        <span class="badge badge-danger" *ngIf="!usuario.estado">Inactivo</span>
+                    </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace API.Parquedero.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Vehiculo")]
     [ApiController]
     public class VehiculoController : ControllerBase
     {
@@ -38,12 +38,29 @@ namespace API.Parquedero.Controllers
         }
 
         // GET api/<VehiculoController>/5
-        [HttpGet("{id}", Name = "GetVehiculo")]
+        [HttpGet("{id:int}", Name = "GetVehiculo")]
         public ActionResult GetById(int id)
         {
             try
             {
                 Vehiculo vehiculo = _context.vehiculos.FirstOrDefault(x => x.idVehiculo == id);
+                return Ok(vehiculo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            //return "value";
+        }
+
+        // GET api/<VehiculoController>/vehiculoPlaca/XXX000
+        //[Route("vehiculoPlaca")]
+        [HttpGet("vehiculoPlaca/{placa}")]
+        public ActionResult GetByPlaca(string placa)
+        {
+            try
+            {
+                Vehiculo vehiculo = _context.vehiculos.FirstOrDefault(x => x.Placa == placa);
                 return Ok(vehiculo);
             }
             catch (Exception ex)
