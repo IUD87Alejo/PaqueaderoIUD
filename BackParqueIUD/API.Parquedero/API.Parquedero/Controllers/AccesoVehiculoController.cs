@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace API.Parquedero.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/AccesoVehiculo")]
     [ApiController]
     public class AccesoVehiculoController : ControllerBase
     {

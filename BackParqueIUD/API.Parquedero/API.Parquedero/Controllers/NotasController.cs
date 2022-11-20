@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace API.Parquedero.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Nota")]
     [ApiController]
     public class NotasController : ControllerBase
     {

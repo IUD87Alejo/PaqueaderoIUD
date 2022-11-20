@@ -18,7 +18,10 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { AccesoVehiculoComponent } from './components/acceso-vehiculo/acceso-vehiculo.component';
 import { AccesoVehiculosComponent } from './components/acceso-vehiculos/acceso-vehiculos.component';
 import { FechaModificadaPipe } from './components/pipes/fecha-modificada.pipe';
+import { YesNoPipe } from './components/pipes/yes-no.pipe';
 import { DatePipe } from '@angular/common';
+import { CeldasComponent } from './components/celdas/celdas.component';
+import { CeldaComponent } from './components/celda/celda.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { DatePipe } from '@angular/common';
     UsuariosComponent,
     AccesoVehiculoComponent,
     AccesoVehiculosComponent,
-    FechaModificadaPipe
+    FechaModificadaPipe,
+    CeldasComponent,
+    CeldaComponent,
+    YesNoPipe
   ],
   imports: [
     BrowserModule,

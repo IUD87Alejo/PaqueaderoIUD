@@ -1,0 +1,50 @@
+<h1>
+    <i class="fas fa-parking"></i>Celda
+</h1>
+<h1>
+    <small>{{accion}} Celda</small> </h1>
+<hr>
+
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-outline-danger" routerLink="/celdas">
+            <i class="fa fa-arrow-left"></i>
+            Regresar
+        </button>
+    </div>
+</div>
+
+<div class="row animated_animated animate__fadeIn animated_faster">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm" autocomplete="off" id="content">
+            <div class="form-group col-12" hidden="hidden">
+                <label>idCelda</label>
+                <input type="number" class="form-control" placeholder="id de Celda" name="idCelda"[(ngModel)]="celda.idCelda" disabled="disabled">
+                <small class="form-text text-muted">Este es un campo Autogenerado</small>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-lg-2">
+                    <label>Estado</label>
+                    <br>
+                    
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="tratamiento" [(ngModel)]="celda.estado" name="estado">
+                        <label class="custom-control-label" for="tratamiento">
+                        <span class="badge badge-success" *ngIf="celda.estado">Activo</span>
+                        <span class="badge badge-danger" *ngIf="!celda.estado">Inactivo</span>
+                    </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

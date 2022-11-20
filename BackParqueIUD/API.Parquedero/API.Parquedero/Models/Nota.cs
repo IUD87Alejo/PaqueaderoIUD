@@ -10,7 +10,7 @@ namespace API.Parquedero.Models
     {
         [Key]
         public int idNota { get; set; }
-        public int idCelda { get; set; }
+        public int idAcceso { get; set; }
         public string nota { get; set; }
     }
 }

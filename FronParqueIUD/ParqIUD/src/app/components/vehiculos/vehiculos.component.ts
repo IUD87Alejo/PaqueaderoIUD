@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { VehiculoService } from '../../services/vehiculo.service';
-import { VehiculoModel } from '../../models/vehiculo.model';
 import { CommonService } from '../../services/common.service';
+
+import { VehiculoModel } from '../../models/vehiculo.model';
+import { VehiculoService } from '../../services/vehiculo.service';
 
 @Component({
   selector: 'app-vehiculos',

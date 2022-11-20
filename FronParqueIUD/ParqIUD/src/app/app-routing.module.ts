@@ -9,6 +9,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { AccesoVehiculosComponent } from './components/acceso-vehiculos/acceso-vehiculos.component';
 import { AccesoVehiculoComponent } from './components/acceso-vehiculo/acceso-vehiculo.component';
+import { CeldasComponent } from './components/celdas/celdas.component';
+import { CeldaComponent } from './components/celda/celda.component';
 
 const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +20,8 @@ const ROUTES: Routes = [
   { path: 'usuario/:id', component: UsuarioComponent },
   { path: 'accesos', component: AccesoVehiculosComponent },
   { path: 'acceso/:id', component: AccesoVehiculoComponent },
+  { path: 'celdas', component: CeldasComponent },
+  { path: 'celda/:id', component: CeldaComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ]
 
