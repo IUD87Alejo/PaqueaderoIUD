@@ -7,6 +7,7 @@ export class VistaAccesosModel {
     fechaIngreso: Date;
     fechaSalida: Date;
     idCelda: number;
+    idNota: number;
     nota: string;
 
     constructor() {
@@ -18,6 +19,7 @@ export class VistaAccesosModel {
         this.fechaIngreso = new Date;
         this.fechaSalida = new Date;
         this.idCelda = 0;
+        this.idNota = 0;
         this.nota = '';
     }
 }

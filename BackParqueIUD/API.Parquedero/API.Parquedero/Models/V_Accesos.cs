@@ -17,6 +17,7 @@ namespace API.Parquedero.Models
         public DateTime FechaIngreso { get; set; }
         public DateTime FechaSalida { get; set; }
         public int idCelda { get; set; }
+        public int idNota { get; set; }
         public string Nota { get; set; }
     }
 }

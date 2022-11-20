@@ -11,6 +11,8 @@ import { AccesoVehiculosComponent } from './components/acceso-vehiculos/acceso-v
 import { AccesoVehiculoComponent } from './components/acceso-vehiculo/acceso-vehiculo.component';
 import { CeldasComponent } from './components/celdas/celdas.component';
 import { CeldaComponent } from './components/celda/celda.component';
+import { NotasComponent } from './components/notas/notas.component';
+import { NotaComponent } from './components/nota/nota.component';
 
 const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +24,8 @@ const ROUTES: Routes = [
   { path: 'acceso/:id', component: AccesoVehiculoComponent },
   { path: 'celdas', component: CeldasComponent },
   { path: 'celda/:id', component: CeldaComponent },
+  { path: 'notas', component: NotasComponent },
+  { path: 'nota/:id', component: NotaComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ]
 

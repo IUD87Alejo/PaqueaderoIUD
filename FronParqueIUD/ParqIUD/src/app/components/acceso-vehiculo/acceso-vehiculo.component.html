@@ -40,9 +40,23 @@
             </div>
 
             <div class="row">
-                
-                
-
+                <div class="form-group col-lg-4">
+                    <label>Fecha de Ingreso</label>
+                    <input type="datetime-local" class="form-control" (change)="SendDataonChange($event)" [(ngModel)]="acceso.fechaIngreso" name="fechaIngreso" id="fechaIngreso" required>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Fecha de Salida</label>
+                    <input type="datetime-local" class="form-control" (change)="SendDataonChange($event)" [(ngModel)]="acceso.fechaSalida" name="fechaSalida" id="fechaSalida">
+                </div>
+                <div class="form-group col-md-4 col-lg-4 col-xl-4 col-sm-12">
+                    <label>Celda</label>
+                    <select name="idCelda" class="form-control" [(ngModel)]="acceso.idCelda" #usuar="ngModel" [disabled]="celdas.length === 0">
+                        <option *ngFor="let cel of celdas" [value]="cel.idCelda">
+                          <span>{{ cel.idCelda }}</span>
+                        </option>
+                      </select>
+                    <small class="form-text text-danger" *ngIf="usuar.invalid && usuar.touched">Obligatorio - Debe seleccionar un Usuario</small>
+                </div>
             </div>
 
             <div class="form-group text-center">

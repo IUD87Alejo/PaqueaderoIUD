@@ -22,6 +22,8 @@ import { YesNoPipe } from './components/pipes/yes-no.pipe';
 import { DatePipe } from '@angular/common';
 import { CeldasComponent } from './components/celdas/celdas.component';
 import { CeldaComponent } from './components/celda/celda.component';
+import { NotasComponent } from './components/notas/notas.component';
+import { NotaComponent } from './components/nota/nota.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CeldaComponent } from './components/celda/celda.component';
     FechaModificadaPipe,
     CeldasComponent,
     CeldaComponent,
-    YesNoPipe
+    YesNoPipe,
+    NotasComponent,
+    NotaComponent
   ],
   imports: [
     BrowserModule,

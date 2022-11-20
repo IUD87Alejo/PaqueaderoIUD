@@ -8,7 +8,7 @@ export class AccesoVehiculoModel {
     constructor() {
         this.idAcceso = 0;
         this.fechaIngreso = new Date;
-        this.fechaSalida = new Date;
+        this.fechaSalida = new Date('0001-01-01T00:00:00');
         this.idVehiculo = 0;
         this.idCelda = 0;
     }
