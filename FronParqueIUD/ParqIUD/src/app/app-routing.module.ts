@@ -13,6 +13,8 @@ import { CeldasComponent } from './components/celdas/celdas.component';
 import { CeldaComponent } from './components/celda/celda.component';
 import { NotasComponent } from './components/notas/notas.component';
 import { NotaComponent } from './components/nota/nota.component';
+import { MensualidadesComponent } from './components/mensualidades/mensualidades.component';
+import { MensualidadComponent } from './components/mensualidad/mensualidad.component';
 
 const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,6 +28,8 @@ const ROUTES: Routes = [
   { path: 'celda/:id', component: CeldaComponent },
   { path: 'notas', component: NotasComponent },
   { path: 'nota/:id', component: NotaComponent },
+  { path: 'mensualidades', component: MensualidadesComponent },
+  { path: 'mensualidad/:id', component: MensualidadComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ]
 

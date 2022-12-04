@@ -24,6 +24,8 @@ import { CeldasComponent } from './components/celdas/celdas.component';
 import { CeldaComponent } from './components/celda/celda.component';
 import { NotasComponent } from './components/notas/notas.component';
 import { NotaComponent } from './components/nota/nota.component';
+import { MensualidadesComponent } from './components/mensualidades/mensualidades.component';
+import { MensualidadComponent } from './components/mensualidad/mensualidad.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { NotaComponent } from './components/nota/nota.component';
     CeldaComponent,
     YesNoPipe,
     NotasComponent,
-    NotaComponent
+    NotaComponent,
+    MensualidadesComponent,
+    MensualidadComponent
   ],
   imports: [
     BrowserModule,

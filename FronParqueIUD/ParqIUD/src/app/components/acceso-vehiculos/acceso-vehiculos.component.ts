@@ -31,7 +31,7 @@ export class AccesoVehiculosComponent implements OnInit {
     });
   }
 
-  deleteVehiculo( accesoVehiculoService:AccesoVehiculoService, i: number ){
+  deleteVehiculo( accesoVehiculoService:AccesoVehiculoService, i: number ) {
     console.log('Eliminar registro');
   }
 

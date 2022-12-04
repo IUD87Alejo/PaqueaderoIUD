@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace API.Parquedero.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Mensualidad")]
     [ApiController]
     public class MensualidadController : ControllerBase
     {
@@ -29,6 +29,21 @@ namespace API.Parquedero.Controllers
             try
             {
                 return Ok(_context.mensualidades.ToList());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            //return new string[] { "value1", "value2" };
+        }
+
+        // GET: api/<AccesoVehiculoController>/VistaRenta
+        [HttpGet("VistaRenta")]
+        public ActionResult GetVista()
+        {
+            try
+            {
+                return Ok(_context.v_Rentas.ToList());
             }
             catch (Exception ex)
             {
